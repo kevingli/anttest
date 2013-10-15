@@ -17,7 +17,7 @@ public class UITest extends UiAutomatorTestCase {
 		
 		UiScrollable settingsView = new UiScrollable(new UiSelector().scrollable(true));
 		settingsView.setAsVerticalList();
-		UiObject aboutButton = settingsView.getChildByText(new UiSelector().className(android.widget.TextView.class.getName()), "About phone");
+		UiObject aboutButton = settingsView.getChildByText(new UiSelector().className(android.widget.TextView.class.getName()), "Accessibility");
 		aboutButton.clickAndWaitForNewWindow();
 		
 		UiScrollable aboutView = new UiScrollable(new UiSelector().scrollable(true));
