@@ -20,6 +20,7 @@ public class UITest extends UiAutomatorTestCase {
 		UiObject aboutButton = settingsView.getChildByText(new UiSelector().className(android.widget.TextView.class.getName()), "About phone");
 		aboutButton.clickAndWaitForNewWindow();
 		
+		// Loud Noises
 		UiScrollable aboutView = new UiScrollable(new UiSelector().scrollable(true));
 	    settingsView.setAsVerticalList();		
 	    UiObject modelNumber = aboutView.getChild(new UiSelector().text("Nexus 4"));
