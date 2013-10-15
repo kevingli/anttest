@@ -17,12 +17,12 @@ public class UITest extends UiAutomatorTestCase {
 		
 		UiScrollable settingsView = new UiScrollable(new UiSelector().scrollable(true));
 		settingsView.setAsVerticalList();
-		UiObject aboutButton = settingsView.getChildByText(new UiSelector().className(android.widget.TextView.class.getName()), "Accessibility");
+		UiObject aboutButton = settingsView.getChildByText(new UiSelector().className(android.widget.TextView.class.getName()), "About phone");
 		aboutButton.clickAndWaitForNewWindow();
 		
 		UiScrollable aboutView = new UiScrollable(new UiSelector().scrollable(true));
 	    settingsView.setAsVerticalList();		
-	    UiObject modelNumber = aboutView.getChild(new UiSelector().text("Nexus 5"));
-	    assertTrue(modelNumber.getText().equals("Nexus 5"));
+	    UiObject modelNumber = aboutView.getChild(new UiSelector().text("sdk"));
+	    assertTrue(modelNumber.getText().equals("sdk"));
 	}
 }
