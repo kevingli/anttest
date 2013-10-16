@@ -20,10 +20,5 @@ public class UITest extends UiAutomatorTestCase {
 		settingsView.setAsVerticalList();
 		UiObject aboutButton = settingsView.getChildByText(new UiSelector().className(android.widget.TextView.class.getName()), "About phone");
 		aboutButton.clickAndWaitForNewWindow();
-		
-		UiScrollable aboutView = new UiScrollable(new UiSelector().scrollable(true));
-	    settingsView.setAsVerticalList();		
-	    UiObject modelNumber = aboutView.getChild(new UiSelector().text("sdk"));
-	    assertTrue(modelNumber.getText().equals("sdk"));
 	}
 }
