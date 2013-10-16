@@ -23,7 +23,7 @@ public class UITest extends UiAutomatorTestCase {
 		
 		UiScrollable aboutView = new UiScrollable(new UiSelector().scrollable(true));
 	    settingsView.setAsVerticalList();		
-	    UiObject modelNumber = aboutView.getChild(new UiSelector().text("4.3"));
-	    assertTrue(modelNumber.getText().equals("4.3"));
+	    UiObject modelNumber = aboutView.getChild(new UiSelector().text("sdk"));
+	    assertTrue(modelNumber.getText().equals("sdk"));
 	}
 }
