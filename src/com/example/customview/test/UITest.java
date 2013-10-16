@@ -67,4 +67,22 @@ public class UITest extends UiAutomatorTestCase {
 		UiObject dataToggle = new UiObject(new UiSelector().className("android.widget.Switch"));
 		assertTrue(dataToggle.getText().equals("ON"));
 	}
+	
+	// This test determines if the device is running Android 4.3
+	public void testFive() throws UiObjectNotFoundException {
+		getUiDevice().pressHome();
+		
+		UiObject settingsButton = new UiObject(new UiSelector().text("Settings"));
+		settingsButton.clickAndWaitForNewWindow();
+		
+		UiScrollable settingsView = new UiScrollable(new UiSelector().scrollable(true));
+		settingsView.setAsVerticalList();
+		UiObject aboutButton = settingsView.getChildByText(new UiSelector().className(android.widget.TextView.class.getName()), "About phone");
+		aboutButton.clickAndWaitForNewWindow();
+		
+		UiScrollable aboutView = new UiScrollable(new UiSelector().scrollable(true));
+	    settingsView.setAsVerticalList();		
+	    UiObject modelNumber = aboutView.getChild(new UiSelector().text("4.3"));
+	    assertTrue(modelNumber.getText().equals("4.3"));
+	}
 }
